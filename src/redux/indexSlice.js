@@ -6,11 +6,11 @@ const indexSlice=createSlice({
     name:'index',
     initialState:initialState,
     reducers:{
-        addTask:{
-            reducer(state,action){
-                
+            setIndex(state,action){
+               return state+3;
             }
-        }
     }
 
 })
+export const {setIndex}=indexSlice.actions;
+export const indexReducer = indexSlice.reducer;
