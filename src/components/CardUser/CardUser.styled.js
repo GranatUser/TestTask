@@ -77,7 +77,6 @@ border-radius: 50%;
 
 export const ButtonFollow = styled.button`
  font-weight: 600;
-    cursor: pointer;
     text-transform: uppercase;
     display: block;
     border: none;

@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const LoaderStyled = styled.div`
   display: block;
-  position: relative;
+  position: fixed;
+  top:0;
+  right: 0;
   width: 80px;
   height: 80px;
   margin-left: auto;

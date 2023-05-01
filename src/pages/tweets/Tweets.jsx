@@ -8,6 +8,8 @@ import { selectIndex } from "../../redux/selectors";
 import { Loader } from "../../components/Loader/Loader";
 import { useLocation } from "react-router";
 import { GoBack } from "./Tweets.styled";
+
+import { StatusFilter } from "../../components/statusFilter/StatusFilter";
  const Tweets = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
@@ -21,6 +23,7 @@ import { GoBack } from "./Tweets.styled";
 
   return (
     <TweetsStyled >
+    <StatusFilter></StatusFilter>
     <GoBack to={backLinkHref}>Back</GoBack>
       <CardUserList/>
       {isLoading && <Loader></Loader>}
