@@ -1,16 +1,24 @@
+import { CardUserList } from "./CardUserList/CardUserList";
+import { useDispatch,useSelector } from "react-redux";
+import { selectIsLoading,selectError } from "../redux/selectors";
+import React,{ useEffect } from "react";
+import { fetchUsers } from "../redux/operations";
+import { AppStyled } from "./App.styled";
+
 export const App = () => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <AppStyled >
+       {isLoading && <p>Loading...</p>}
+      {error && <p>Error</p>}
+      <CardUserList/>
+    </AppStyled >
   );
 };
